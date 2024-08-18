@@ -1,0 +1,12 @@
+[core]
+	autocrlf = false
+[init]
+	defaultBranch = main
+[user]
+	name = Guany
+	email = 1084072690@qq.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
