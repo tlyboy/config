@@ -117,7 +117,7 @@ function i() {
   cd ~/i/$1
 }
 
-export PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
+PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
 
 export CATALINA_HOME="/usr/local/tomcat"
 export PATH="$CATALINA_HOME/bin:$PATH"
