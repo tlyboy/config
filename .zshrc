@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/tly/.zsh/completions:"* ]]; then export FPATH="/Users/tly/.zsh/completions:$FPATH"; fi
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -93,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
@@ -165,8 +167,10 @@ alias lintf="nr lint --fix"
 alias release="nr release"
 alias re="nr release"
 
-export DENO_INSTALL="/Users/tly/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+. "/Users/tly/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
 
 # bun completions
 [ -s "/Users/tly/.bun/_bun" ] && source "/Users/tly/.bun/_bun"
