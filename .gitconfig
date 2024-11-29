@@ -1,4 +1,5 @@
 [core]
+	ignorecase = false
 	autocrlf = false
 [init]
 	defaultBranch = main
