@@ -121,6 +121,12 @@ function i() {
 
 PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/tly/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
+
 export CATALINA_HOME="/usr/local/tomcat"
 export PATH="$CATALINA_HOME/bin:$PATH"
 
@@ -168,13 +174,8 @@ alias release="nr release"
 alias re="nr release"
 
 . "/Users/tly/.deno/env"
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
 
 # bun completions
 [ -s "/Users/tly/.bun/_bun" ] && source "/Users/tly/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+. "$HOME/.local/bin/env"
