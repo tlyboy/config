@@ -175,6 +175,10 @@ alias re="nr release"
 
 . "/Users/tly/.deno/env"
 
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # bun completions
 [ -s "/Users/tly/.bun/_bun" ] && source "/Users/tly/.bun/_bun"
 
