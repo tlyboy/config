@@ -127,26 +127,12 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
-export CATALINA_HOME="/usr/local/tomcat"
-export PATH="$CATALINA_HOME/bin:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
 
-export MAVEN_HOME="/usr/local/maven"
-export PATH="$MAVEN_HOME/bin:$PATH"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/tly/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/tly/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/tly/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/tly/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+. "$HOME/.local/bin/env"
 
 # fnm
 FNM_PATH="/Users/tly/Library/Application Support/fnm"
@@ -174,12 +160,13 @@ alias release="nr release"
 alias re="nr release"
 
 . "/Users/tly/.deno/env"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
 
 # bun completions
 [ -s "/Users/tly/.bun/_bun" ] && source "/Users/tly/.bun/_bun"
 
-. "$HOME/.local/bin/env"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
