@@ -115,6 +115,8 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
+export EDITOR="cursor"
+
 function i() {
   cd ~/i/$1
 }
@@ -160,9 +162,6 @@ alias release="nr release"
 alias re="nr release"
 
 . "/Users/tly/.deno/env"
-# Initialize zsh completions (added by deno install script)
-autoload -Uz compinit
-compinit
 
 # bun completions
 [ -s "/Users/tly/.bun/_bun" ] && source "/Users/tly/.bun/_bun"
