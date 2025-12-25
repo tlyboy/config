@@ -129,17 +129,16 @@ autoload -Uz compinit
 compinit
 # End of Docker CLI completions
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-25.jdk/Contents/Home"
 
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export NDK_HOME="$ANDROID_HOME/ndk/$(ls -1 $ANDROID_HOME/ndk)"
+export MAVEN_HOME="/usr/local/maven"
+export PATH="$MAVEN_HOME/bin:$PATH"
 
 . "$HOME/.local/bin/env"
 
 # fnm
-FNM_PATH="/Users/tly/Library/Application Support/fnm"
+FNM_PATH="/opt/homebrew/opt/fnm/bin"
 if [ -d "$FNM_PATH" ]; then
-  export PATH="/Users/tly/Library/Application Support/fnm:$PATH"
   eval "`fnm env`"
 fi
 
