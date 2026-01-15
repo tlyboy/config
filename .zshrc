@@ -115,9 +115,15 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(starship init zsh)"
 
-export EDITOR="cursor"
+export EDITOR="code"
 
-function i() {
+claude() {
+  local base_args="--allow-dangerously-skip-permissions --permission-mode plan"
+
+  command claude ${=base_args} -c "$@" 2>/dev/null || command claude ${=base_args} "$@"
+}
+
+i() {
   cd ~/i/$1
 }
 
