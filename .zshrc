@@ -117,14 +117,14 @@ eval "$(starship init zsh)"
 
 export EDITOR="code"
 
+i() {
+  cd ~/i/$1
+}
+
 claude() {
   local base_args="--allow-dangerously-skip-permissions --permission-mode plan"
 
   command claude ${=base_args} -c "$@" 2>/dev/null || command claude ${=base_args} "$@"
-}
-
-i() {
-  cd ~/i/$1
 }
 
 PATH="$HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin:$PATH"
