@@ -1,3 +1,0 @@
-# config
-
-⚙︎ Guany config
